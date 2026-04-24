@@ -19,7 +19,7 @@ def main() -> int:
                 {"role": "user", "content": "What is the capital of Germany?"},
             ],
             temperature=0.0,
-            max_tokens=64,
+            max_tokens=16,
         )
     except Exception as exc:  # noqa: BLE001
         print(f"[ERROR] Failed to call OpenAI-compatible endpoint: {exc}")

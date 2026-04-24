@@ -16,7 +16,7 @@ def main() -> int:
             {"role": "user", "content": "What is the capital of Germany?"},
         ],
         "temperature": 0.0,
-        "max_tokens": 64,
+        "max_tokens": 16,
     }
 
     url = f"{base_url}/chat/completions"

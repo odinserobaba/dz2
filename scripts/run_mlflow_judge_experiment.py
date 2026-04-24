@@ -1,5 +1,6 @@
 import os
 import sys
+import math
 
 import mlflow
 import pandas as pd
@@ -9,7 +10,7 @@ from mlflow.metrics.genai import EvaluationExample, make_genai_metric
 
 
 def generate_predictions(
-    client: OpenAI, model: str, questions: list[str], max_tokens: int = 96
+    client: OpenAI, model: str, questions: list[str], max_tokens: int = 24
 ) -> list[str]:
     predictions: list[str] = []
     for question in questions:
@@ -29,7 +30,7 @@ def generate_predictions(
 def main() -> int:
     base_url = os.getenv("VLLM_BASE_URL", "http://localhost:8000/v1").rstrip("/")
     api_key = os.getenv("VLLM_API_KEY", "local-dev-key")
-    model_name = os.getenv("VLLM_MODEL", "facebook/opt-1.3b")
+    model_name = os.getenv("VLLM_MODEL", "distilgpt2")
     tracking_uri = os.getenv("MLFLOW_TRACKING_URI", "file:./mlruns")
     experiment_name = os.getenv("MLFLOW_EXPERIMENT_NAME", "vllm_llm_judge_homework")
 
@@ -103,6 +104,20 @@ def main() -> int:
         mlflow.log_param("vllm_model", model_name)
         mlflow.log_table(df, "predictions.json")
 
+        # Always log simple numeric metrics so they are visible in MLflow UI
+        # even when LLM-as-a-judge scoring returns NaN on tiny base models.
+        pred_lengths = [len(p) for p in predictions]
+        non_empty_count = sum(1 for p in predictions if p.strip())
+        exact_match_count = sum(
+            1
+            for pred, target in zip(predictions, targets)
+            if pred.strip().lower() == target.strip().lower()
+        )
+        mlflow.log_metric("manual_prediction_count", float(len(predictions)))
+        mlflow.log_metric("manual_non_empty_ratio", non_empty_count / len(predictions))
+        mlflow.log_metric("manual_avg_prediction_length", sum(pred_lengths) / len(pred_lengths))
+        mlflow.log_metric("manual_exact_match_ratio", exact_match_count / len(predictions))
+
         try:
             result = mlflow.evaluate(
                 data=df,
@@ -117,6 +132,11 @@ def main() -> int:
                 "[HINT] Ensure MLflow can reach vLLM and that VLLM_BASE_URL includes /v1."
             )
             return 1
+
+        # Re-log judge metrics only when they are valid numbers.
+        for key, value in result.metrics.items():
+            if isinstance(value, (int, float)) and not math.isnan(float(value)):
+                mlflow.log_metric(f"eval_{key.replace('/', '_')}", float(value))
 
         print("=== MLflow evaluation completed ===")
         print(f"Run ID: {run.info.run_id}")

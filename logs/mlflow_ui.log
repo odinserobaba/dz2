@@ -1,0 +1,119 @@
+Backend store URI not provided. Using ./mlruns
+Registry store URI not provided. Using backend store URI.
+/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py:377: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, artifact_uri)
+/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py:412: FutureWarning: The filesystem model registry backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri)
+[MLflow] Security middleware enabled with default settings (localhost-only). To allow connections from other hosts, use --host 0.0.0.0 and configure --allowed-hosts and --cors-allowed-origins.
+2026/04/24 11:52:34 WARNING mlflow.server: MLflow job execution requirements not met (MLflow job backend requires a database backend store URI but got ./mlruns). Server will start without job execution support. Errors will be surfaced at job invocation time.
+2026/04/24 11:52:35 INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+2026/04/24 11:52:35 INFO:     Started parent process [13767]
+2026/04/24 11:52:39 INFO:     Started server process [13769]
+2026/04/24 11:52:39 INFO:     Waiting for application startup.
+2026/04/24 11:52:39 INFO:     Application startup complete.
+2026/04/24 11:52:39 INFO:     Started server process [13771]
+2026/04/24 11:52:39 INFO:     Waiting for application startup.
+2026/04/24 11:52:39 INFO:     Application startup complete.
+2026/04/24 11:52:39 INFO:     Started server process [13770]
+2026/04/24 11:52:39 INFO:     Waiting for application startup.
+2026/04/24 11:52:39 INFO:     Application startup complete.
+2026/04/24 11:52:39 INFO:     Started server process [13772]
+2026/04/24 11:52:39 INFO:     Waiting for application startup.
+2026/04/24 11:52:39 INFO:     Application startup complete.
+2026/04/24 11:52:41 INFO:     127.0.0.1:49808 - "GET / HTTP/1.1" 304 Not Modified
+/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py:377: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, artifact_uri)
+2026/04/24 11:52:41 INFO:     127.0.0.1:49808 - "GET /ajax-api/3.0/mlflow/server-info HTTP/1.1" 200 OK
+2026/04/24 11:52:41 INFO:     127.0.0.1:49808 - "GET /ajax-api/3.0/mlflow/assistant/config HTTP/1.1" 200 OK
+2026/04/24 11:52:41 INFO:     127.0.0.1:49808 - "GET /ajax-api/2.0/mlflow/experiments/search?max_results=5&order_by=last_update_time+DESC HTTP/1.1" 200 OK
+2026/04/24 11:52:41 INFO:     127.0.0.1:49810 - "GET /ajax-api/3.0/mlflow/ui-telemetry HTTP/1.1" 200 OK
+2026/04/24 11:52:56 INFO:     127.0.0.1:59006 - "GET /ajax-api/2.0/mlflow/experiments/search?max_results=25&order_by=last_update_time+DESC&filter=tags.%60mlflow.experiment.isGateway%60+IS+NULL HTTP/1.1" 200 OK
+/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py:377: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, artifact_uri)
+2026/04/24 11:52:58 INFO:     127.0.0.1:59010 - "POST /ajax-api/2.0/mlflow/runs/search HTTP/1.1" 200 OK
+2026/04/24 11:52:58 INFO:     127.0.0.1:59006 - "POST /graphql HTTP/1.1" 200 OK
+2026/04/24 11:52:59 ERROR mlflow.server.handlers: Error in _search_evaluation_datasets_handler: search_datasets is not supported with FileStore. This feature requires a SQL-based tracking backend (e.g., SQLite, PostgreSQL, MySQL). Please configure MLflow with a SQL backend using --backend-store-uri. For SQLite setup instructions, see: https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/#configure-server. Set MLFLOW_LOGGING_LEVEL=DEBUG for traceback.
+2026/04/24 11:52:59 INFO:     127.0.0.1:59006 - "POST /ajax-api/3.0/mlflow/datasets/search HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:52:59 INFO:     127.0.0.1:59010 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:52:59 INFO:     127.0.0.1:59010 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:01 ERROR mlflow.server.handlers: Error in _search_evaluation_datasets_handler: search_datasets is not supported with FileStore. This feature requires a SQL-based tracking backend (e.g., SQLite, PostgreSQL, MySQL). Please configure MLflow with a SQL backend using --backend-store-uri. For SQLite setup instructions, see: https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/#configure-server. Set MLFLOW_LOGGING_LEVEL=DEBUG for traceback.
+2026/04/24 11:53:01 INFO:     127.0.0.1:59010 - "POST /ajax-api/3.0/mlflow/datasets/search HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:53:01 INFO:     127.0.0.1:59006 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py:377: FutureWarning: The filesystem tracking backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri, artifact_uri)
+2026/04/24 11:53:01 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:02 INFO:     127.0.0.1:59006 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:02 ERROR mlflow.server: Exception on /ajax-api/3.0/mlflow/scorers/list [GET]
+Traceback (most recent call last):
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py", line 1015, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py", line 1062, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py", line 4671, in _list_scorers
+    scorers = _get_tracking_store().list_scorers(request_message.experiment_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/store/tracking/abstract_store.py", line 1563, in list_scorers
+    raise NotImplementedError(self.__class__.__name__)
+NotImplementedError: FileStore
+2026/04/24 11:53:03 INFO:     127.0.0.1:59020 - "GET /ajax-api/3.0/mlflow/scorers/list?experiment_id=368681512278234023 HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:53:03 ERROR mlflow.server.handlers: Error in _search_evaluation_datasets_handler: search_datasets is not supported with FileStore. This feature requires a SQL-based tracking backend (e.g., SQLite, PostgreSQL, MySQL). Please configure MLflow with a SQL backend using --backend-store-uri. For SQLite setup instructions, see: https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/#configure-server. Set MLFLOW_LOGGING_LEVEL=DEBUG for traceback.
+2026/04/24 11:53:03 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/datasets/search HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:53:04 INFO:     127.0.0.1:59020 - "POST /ajax-api/2.0/mlflow/runs/search HTTP/1.1" 200 OK
+2026/04/24 11:53:09 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:09 INFO:     127.0.0.1:34944 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:09 ERROR mlflow.server.handlers: Error in _search_evaluation_datasets_handler: search_datasets is not supported with FileStore. This feature requires a SQL-based tracking backend (e.g., SQLite, PostgreSQL, MySQL). Please configure MLflow with a SQL backend using --backend-store-uri. For SQLite setup instructions, see: https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/#configure-server. Set MLFLOW_LOGGING_LEVEL=DEBUG for traceback.
+2026/04/24 11:53:09 INFO:     127.0.0.1:34944 - "POST /ajax-api/3.0/mlflow/datasets/search HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:53:10 INFO:     127.0.0.1:34944 - "GET / HTTP/1.1" 304 Not Modified
+2026/04/24 11:53:11 INFO:     127.0.0.1:34944 - "GET /ajax-api/3.0/mlflow/server-info HTTP/1.1" 200 OK
+2026/04/24 11:53:11 INFO:     127.0.0.1:34946 - "GET /ajax-api/3.0/mlflow/assistant/config HTTP/1.1" 200 OK
+2026/04/24 11:53:11 INFO:     127.0.0.1:59020 - "POST /ajax-api/2.0/mlflow/runs/search HTTP/1.1" 200 OK
+2026/04/24 11:53:11 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/ui-telemetry HTTP/1.1" 200 OK
+2026/04/24 11:53:11 INFO:     127.0.0.1:34944 - "POST /graphql HTTP/1.1" 200 OK
+/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py:412: FutureWarning: The filesystem model registry backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri)
+2026/04/24 11:53:12 INFO:     127.0.0.1:59020 - "GET /ajax-api/2.0/mlflow/model-versions/search?filter=run_id%3D%27792d3d82e68a4760bfbca9aff9b52f8e%27 HTTP/1.1" 200 OK
+/home/nuanred/Downloads/logs/dz2/.venv/lib/python3.12/site-packages/mlflow/server/handlers.py:412: FutureWarning: The filesystem model registry backend (e.g., './mlruns') is deprecated as of February 2026. Consider transitioning to a database backend (e.g., 'sqlite:///mlflow.db') to take advantage of the latest MLflow features. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance.
+  return FileStore(store_uri)
+2026/04/24 11:53:12 INFO:     127.0.0.1:34944 - "POST /graphql HTTP/1.1" 200 OK
+2026/04/24 11:53:12 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:12 INFO:     127.0.0.1:34944 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:12 ERROR mlflow.server.handlers: Error in _search_evaluation_datasets_handler: search_datasets is not supported with FileStore. This feature requires a SQL-based tracking backend (e.g., SQLite, PostgreSQL, MySQL). Please configure MLflow with a SQL backend using --backend-store-uri. For SQLite setup instructions, see: https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/#configure-server. Set MLFLOW_LOGGING_LEVEL=DEBUG for traceback.
+2026/04/24 11:53:12 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/datasets/search HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:53:12 INFO:     127.0.0.1:34944 - "POST /ajax-api/2.0/mlflow/runs/search HTTP/1.1" 200 OK
+2026/04/24 11:53:15 INFO:     127.0.0.1:59020 - "GET /ajax-api/2.0/mlflow/model-versions/search?filter=run_id%3D%27e77f25dd25a84cc5a164543ea42fa74a%27 HTTP/1.1" 200 OK
+2026/04/24 11:53:15 INFO:     127.0.0.1:34944 - "POST /graphql HTTP/1.1" 200 OK
+2026/04/24 11:53:15 INFO:     127.0.0.1:34944 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:15 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/traces/search HTTP/1.1" 200 OK
+2026/04/24 11:53:15 ERROR mlflow.server.handlers: Error in _search_evaluation_datasets_handler: search_datasets is not supported with FileStore. This feature requires a SQL-based tracking backend (e.g., SQLite, PostgreSQL, MySQL). Please configure MLflow with a SQL backend using --backend-store-uri. For SQLite setup instructions, see: https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/#configure-server. Set MLFLOW_LOGGING_LEVEL=DEBUG for traceback.
+2026/04/24 11:53:15 INFO:     127.0.0.1:59020 - "POST /ajax-api/3.0/mlflow/datasets/search HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:53:17 INFO:     127.0.0.1:59020 - "GET /ajax-api/2.0/mlflow/model-versions/search?filter=run_id%3D%27792d3d82e68a4760bfbca9aff9b52f8e%27 HTTP/1.1" 200 OK
+2026/04/24 11:53:32 INFO:     127.0.0.1:33098 - "GET /ajax-api/2.0/mlflow/model-versions/search?filter=tags.%60mlflow.prompt.is_prompt%60+%3D+%27true%27+AND+tags.%60mlflow.prompt.run_ids%60+ILIKE+%22%25792d3d82e68a4760bfbca9aff9b52f8e%25%22 HTTP/1.1" 200 OK
+2026/04/24 11:53:32 INFO:     127.0.0.1:33092 - "POST /ajax-api/2.0/mlflow/runs/search HTTP/1.1" 200 OK
+2026/04/24 11:53:40 INFO:     127.0.0.1:51524 - "GET /ajax-api/2.0/mlflow/model-versions/search?filter=tags.%60mlflow.prompt.is_prompt%60+%3D+%27true%27+AND+tags.%60mlflow.prompt.run_ids%60+ILIKE+%22%25792d3d82e68a4760bfbca9aff9b52f8e%25%22 HTTP/1.1" 200 OK
+2026/04/24 11:53:41 INFO:     127.0.0.1:51524 - "POST /ajax-api/3.0/mlflow/ui-telemetry HTTP/1.1" 200 OK
+2026/04/24 11:53:46 INFO:     127.0.0.1:51524 - "GET /ajax-api/2.0/mlflow/model-versions/search?filter=tags.%60mlflow.prompt.is_prompt%60+%3D+%27true%27+AND+tags.%60mlflow.prompt.run_ids%60+ILIKE+%22%25792d3d82e68a4760bfbca9aff9b52f8e%25%22 HTTP/1.1" 200 OK
+2026/04/24 11:53:49 INFO:     127.0.0.1:51524 - "GET /ajax-api/2.0/mlflow/model-versions/search?filter=tags.%60mlflow.prompt.is_prompt%60+%3D+%27true%27+AND+tags.%60mlflow.prompt.run_ids%60+ILIKE+%22%25792d3d82e68a4760bfbca9aff9b52f8e%25%22 HTTP/1.1" 200 OK
+2026/04/24 11:54:08 ERROR mlflow.server.handlers: Error in _search_evaluation_datasets_handler: search_datasets is not supported with FileStore. This feature requires a SQL-based tracking backend (e.g., SQLite, PostgreSQL, MySQL). Please configure MLflow with a SQL backend using --backend-store-uri. For SQLite setup instructions, see: https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/#configure-server. Set MLFLOW_LOGGING_LEVEL=DEBUG for traceback.
+2026/04/24 11:54:08 INFO:     127.0.0.1:55662 - "POST /ajax-api/3.0/mlflow/datasets/search HTTP/1.1" 500 Internal Server Error
+2026/04/24 11:54:09 INFO:     127.0.0.1:55662 - "GET /ajax-api/2.0/mlflow/artifacts/list?run_uuid=792d3d82e68a4760bfbca9aff9b52f8e HTTP/1.1" 200 OK
+2026/04/24 11:54:11 INFO:     127.0.0.1:55662 - "GET /get-artifact?path=eval_results_table.json&run_uuid=792d3d82e68a4760bfbca9aff9b52f8e HTTP/1.1" 200 OK
+2026/04/24 11:54:11 INFO:     127.0.0.1:55662 - "POST /ajax-api/3.0/mlflow/ui-telemetry HTTP/1.1" 200 OK
+2026/04/24 11:54:20 INFO:     127.0.0.1:57140 - "GET /get-artifact?path=genai_custom_metrics.json&run_uuid=792d3d82e68a4760bfbca9aff9b52f8e HTTP/1.1" 200 OK
+2026/04/24 11:54:34 INFO:     127.0.0.1:45596 - "GET /get-artifact?path=predictions.json&run_uuid=792d3d82e68a4760bfbca9aff9b52f8e HTTP/1.1" 200 OK
