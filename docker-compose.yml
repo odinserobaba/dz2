@@ -1,0 +1,16 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: vllm-server
+    ports:
+      - "8000:8000"
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN:-}
+    command: >
+      --model ${VLLM_MODEL:-facebook/opt-1.3b}
+      --host 0.0.0.0
+      --port 8000
+      --dtype auto
+      --max-model-len 2048
+    ipc: host
+    restart: unless-stopped
